@@ -1,0 +1,80 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Анкетирование &mdash; ГКБ3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tambov Hospital#3 Surveys" />
+
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="{% static 'survey/css/animate.css' %}">
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" href="{% static 'survey/css/icomoon.css' %}">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="{% static 'survey/css/bootstrap.css' %}">
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="{% static 'survey/css/magnific-popup.css' %}">
+  <!-- Owl Carousel  -->
+  <link rel="stylesheet" href="{% static 'survey/css/owl.carousel.min.css' %}"> 
+  <link rel="stylesheet" href="{% static 'survey/css/owl.theme.default.min.css' %}">
+  <!-- Flexslider  -->
+  <link rel="stylesheet" href="{% static 'survey/css/flexslider.css' %}">
+  <!-- Theme style  -->
+  <link rel="stylesheet" href="{% static 'survey/css/style.css' %}">
+  {% block style %}{% endblock %}
+
+  <!-- Modernizr JS -->
+  <script src="{% static 'survey/js/modernizr-2.6.2.min.js' %}"></script>
+  <!-- FOR IE9 below -->
+  <!--[if lt IE 9]>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  {{response_form.media}}
+  {% if asset_context.flatpickr %}
+    <script type="text/javascript" src="{% static 'survey/js/flatpickr.min.js' %}"></script>
+  {% endif %}
+  {% if asset_context.flatpickr %}
+    {{ block.super }}
+    <link href="{% static 'survey/css/flatpickr.min.css'%}" rel="stylesheet" type="text/css"/>
+  {% endif %}
+  </head>
+  <body>
+    {% block body %}{% endblock %}
+  <!-- jQuery -->
+  <script src="{% static 'survey/js/jquery.min.js' %}"></script>
+  <!-- jQuery Easing -->
+  <script src="{% static 'survey/js/jquery.easing.1.3.js' %}"></script>
+  <!-- Bootstrap -->
+  <script src="{% static 'survey/js/bootstrap.min.js' %}"></script>
+  <!-- Waypoints -->
+  <script src="{% static 'survey/js/jquery.waypoints.min.js' %}"></script>
+  <!-- Stellar Parallax -->
+  <script src="{% static 'survey/js/jquery.stellar.min.js' %}"></script>
+  <!-- Carousel -->
+  <script src="{% static 'survey/js/owl.carousel.min.js' %}"></script>
+  <!-- Flexslider -->
+  <script src="{% static 'survey/js/jquery.flexslider-min.js' %}"></script>
+  <!-- countTo -->
+  <script src="{% static 'survey/js/jquery.countTo.js' %}"></script>
+  <!-- Magnific Popup -->
+  <script src="{% static 'survey/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'survey/js/magnific-popup-options.js' %}"></script>
+  <!-- Sticky Kit -->
+  <script src="{% static 'survey/js/sticky-kit.min.js' %}"></script>
+  <!-- Google Map -->
+  <!-- Main -->
+  <script src="{% static 'survey/js/main.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+
+{% extends 'survey/base.html' %}
+
+{% block body %}
+		
+	<div class="qbootstrap-loader"></div>
+	
+	<div id="page">
+	<nav class="qbootstrap-nav" role="navigation">
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="top">
+							<div class="row">
+								<div class="col-md-4 col-md-push-4 text-center"> 
+									<div id="qbootstrap-logo"><a href="http://gkb3-tambov.ru/"><i class="icon-plus-outline"></i>ГКБ <span>№ 3</span></a></div>
+								</div>
+								<div class="col-md-4 col-md-pull-4">
+									<div class="num">
+										<span class="icon"><i class="icon-phone"></i></span>
+										<p><a href="#">75-64-76 #1</a><br><a href="#">53-70-10</a></p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="loc">
+										<span class="icon"><i class="icon-location"></i></span>
+										<p><a href="#">Тамбов, ул. Карла Маркса д.234/365</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+	
+
+
+
+<div id="qbootstrap-blog">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+
+	<div class="blog-wrap animate-box">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="blog-desc">
+									<h2>Опрос успешно завершен, Ваши результаты сохранены</h2>
+									<h2> ПИН КОД Вашей анкеты: <b>{{ response.pin }}</b> </h2>
+									<p>Запишите ПИН КОД Вашей анкеты, чтобы потом при посещении поликлиники представить его врачу.</p>
+									<p><a href="http://gkb3-tambov.ru/" class="btn btn-primary">Назад на сайт поликлиники</a>&nbsp;&nbsp;
+										<a href='/survey/found/{{ response.pin }}' class="btn btn-primary">Просмотр результатов анкетирования</a></p>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	</div>
+
+
+{% endblock %}

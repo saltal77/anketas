@@ -1,0 +1,102 @@
+
+{% extends 'survey/base.html' %}
+
+{% block body %}
+		
+	<div class="qbootstrap-loader"></div>
+	
+	<div id="page">
+	<nav class="qbootstrap-nav" role="navigation">
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="top">
+							<div class="row">
+								<div class="col-md-4 col-md-push-4 text-center"> 
+									<div id="qbootstrap-logo"><a href="http://gkb3-tambov.ru/"><i class="icon-plus-outline"></i>ГКБ <span>№ 3</span></a></div>
+								</div>
+								<div class="col-md-4 col-md-pull-4">
+									<div class="num">
+										<span class="icon"><i class="icon-phone"></i></span>
+										<p><a href="#">75-64-76 #1</a><br><a href="#">53-70-10</a></p>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="loc">
+										<span class="icon"><i class="icon-location"></i></span>
+										<p><a href="#">Тамбов, ул. Карла Маркса д.234/365</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+	
+
+
+<div id="qbootstrap-contact">
+		<div class="container">
+			<div class="row">
+
+     <div class="col-md-10 col-md-offset-1 animate-box">
+					<h3>Поиск Анкет</h3>
+					<form action="" method="post">
+						{% csrf_token %}
+
+						<div class="row form-group">
+							<div class="col-md-6">
+								{{ form.sender.errors }}
+								<label for="{{ form.pin.id_for_label }}">Введите ПИН КОД</label><br>
+                                  {{ form.pin }}
+							</div>
+							<div class="col-md-6">
+								<br>
+								<input type="submit" value="Найти" class="btn btn-primary btn-lg">
+							</div>
+
+						</div>
+
+						{% if res %}
+						<p>
+						  <div class="form-group animate-box">
+						       <h3>Анкета # {{ res.pin }} от {{ res.created|date }} найдена</h3>
+						    </div>
+						</p>
+						{% endif %}
+						{% if no_res %}
+						<p>
+						    <div class="form-group animate-box">
+						       <h3>Анкета не найдена</h3>
+						    </div>
+						</p>
+						{% endif %}
+						<br>
+						<br>
+
+						<div class="form-group text-center">
+							<a href="http://gkb3-tambov.ru/" class="btn btn-primary" role="button">Назад на сайт поликлиники</a> 
+							{% if res %}<a class="btn btn-primary" href='/survey/found/{{ res.pin }}' role="button"> Просмотр анкеты  # {{ res.pin }} </a>{% endif %}
+						</div>
+
+					</form>	
+
+				</div>
+		      </div>
+		   </div>
+		</div>
+
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+
+
+{% endblock %}
